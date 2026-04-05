@@ -33,14 +33,14 @@ spec:
               value: kafka:9092
           readinessProbe:
             httpGet:
-              path: /
+              path: /actuator/health
               port: 8080
             initialDelaySeconds: 30
             periodSeconds: 10
             failureThreshold: 10
           livenessProbe:
             httpGet:
-              path: /
+              path: /actuator/health
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 15
