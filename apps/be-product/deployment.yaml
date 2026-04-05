@@ -31,12 +31,8 @@ spec:
               value: redis-master
             - name: KAFKA_BOOTSTRAP_SERVERS
               value: kafka:9092
-            - name: SPRING_KAFKA_PROPERTIES_SECURITY_PROTOCOL
-              value: SASL_PLAINTEXT
-            - name: SPRING_KAFKA_PROPERTIES_SASL_MECHANISM
-              value: PLAIN
-            - name: SPRING_KAFKA_PROPERTIES_SASL_JAAS_CONFIG
-              value: "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"user1\" password=\"plCxJVIBcH\";"
+            - name: SPRING_APPLICATION_JSON
+              value: '{"spring":{"kafka":{"properties":{"security.protocol":"SASL_PLAINTEXT","sasl.mechanism":"PLAIN","sasl.jaas.config":"org.apache.kafka.common.security.plain.PlainLoginModule required username=\"user1\" password=\"plCxJVIBcH\";}}}}'
           readinessProbe:
             httpGet:
               path: /actuator/health
