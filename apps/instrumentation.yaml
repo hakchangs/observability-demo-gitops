@@ -6,6 +6,9 @@ metadata:
 spec:
   exporter:
     endpoint: http://192.168.122.175:4317
+  env:
+    - name: OTEL_EXPORTER_OTLP_PROTOCOL
+      value: grpc
   propagators:
     - tracecontext
     - baggage
