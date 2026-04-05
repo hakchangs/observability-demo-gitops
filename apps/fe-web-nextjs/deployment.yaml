@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fe-web-nextjs
+  namespace: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fe-web-nextjs
+  template:
+    metadata:
+      labels:
+        app: fe-web-nextjs
+    spec:
+      imagePullSecrets:
+        - name: harbor-credentials
+      containers:
+        - name: fe-web-nextjs
+          image: harbor.platform.local/app/fe-web-nextjs:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+            - name: BFF_URL
+              value: http://be-bff:8080
+            - name: OTEL_COLLECTOR_URL
+              value: http://$(NODE_IP):4318
+            - name: HOSTNAME
+              value: "0.0.0.0"
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 20
+            periodSeconds: 15
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "300m"

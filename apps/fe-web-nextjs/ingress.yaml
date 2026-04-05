@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fe-web-nextjs
+  namespace: app
+spec:
+  rules:
+    - host: app.platform.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: fe-web-nextjs
+                port:
+                  number: 3000
