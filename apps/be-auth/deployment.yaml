@@ -12,6 +12,8 @@ spec:
     metadata:
       labels:
         app: be-auth
+      annotations:
+        instrumentation.opentelemetry.io/inject-java: "true"
     spec:
       imagePullSecrets:
         - name: harbor-credentials
@@ -21,19 +23,8 @@ spec:
           ports:
             - containerPort: 8080
           env:
-            - name: NODE_IP
-              valueFrom:
-                fieldRef:
-                  fieldPath: status.hostIP
-            - name: JAVA_TOOL_OPTIONS
-              value: >-
-                -javaagent:/app/opentelemetry-javaagent.jar
-                -Dotel.service.name=be-auth
-                -Dotel.metrics.exporter=otlp
-                -Dotel.logs.exporter=otlp
-                -Dotel.traces.exporter=otlp
-                -Dotel.exporter.otlp.endpoint=http://$(NODE_IP):4317
-                -Dotel.exporter.otlp.protocol=grpc
+            - name: OTEL_SERVICE_NAME
+              value: be-auth
           readinessProbe:
             httpGet:
               path: /
@@ -50,7 +41,7 @@ spec:
           resources:
             requests:
               memory: "256Mi"
-              cpu: "100m"
+              cpu: "50m"
             limits:
               memory: "512Mi"
               cpu: "500m"
