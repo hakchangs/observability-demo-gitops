@@ -14,6 +14,8 @@ spec:
     metadata:
       labels:
         app: be-report
+      annotations:
+        instrumentation.opentelemetry.io/inject-python: "true"
     spec:
       imagePullSecrets:
         - name: harbor-credentials
