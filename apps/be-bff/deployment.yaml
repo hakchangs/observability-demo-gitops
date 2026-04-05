@@ -4,6 +4,8 @@ metadata:
   name: be-bff
   namespace: app
 spec:
+  strategy:
+    type: Recreate
   replicas: 1
   selector:
     matchLabels:

@@ -4,6 +4,8 @@ metadata:
   name: be-product
   namespace: app
 spec:
+  strategy:
+    type: Recreate
   replicas: 1
   selector:
     matchLabels:
