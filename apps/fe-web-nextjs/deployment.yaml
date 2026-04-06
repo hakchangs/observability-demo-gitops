@@ -12,6 +12,8 @@ spec:
     metadata:
       labels:
         app: fe-web-nextjs
+      annotations:
+        instrumentation.opentelemetry.io/inject-nodejs: "true"
     spec:
       imagePullSecrets:
         - name: harbor-credentials
@@ -27,8 +29,8 @@ spec:
                   fieldPath: status.hostIP
             - name: BFF_URL
               value: http://be-bff:8080
-            - name: OTEL_COLLECTOR_URL
-              value: http://$(NODE_IP):4318
+            - name: OTEL_SERVICE_NAME
+              value: fe-web-nextjs
             - name: HOSTNAME
               value: "0.0.0.0"
           readinessProbe:
