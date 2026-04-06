@@ -21,7 +21,7 @@ spec:
         - name: harbor-credentials
       containers:
         - name: be-report
-          image: harbor.platform.local/app/be-report:8fe5a62a
+          image: harbor.platform.local/app/be-report:2b7418e7
           ports:
             - containerPort: 8000
           env:
