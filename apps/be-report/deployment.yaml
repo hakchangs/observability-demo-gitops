@@ -33,6 +33,10 @@ spec:
               value: http://192.168.122.175:4318
             - name: OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED
               value: "true"
+            - name: REDIS_HOST
+              value: redis-master
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: kafka:9092
             - name: SUBSCRIPTION_URL
               value: http://be-subscription:8080
             - name: PRODUCT_URL
