@@ -33,6 +33,10 @@ spec:
               value: fe-web-nextjs
             - name: OTEL_LOGS_EXPORTER
               value: otlp
+            - name: OTEL_COLLECTOR_HTTP_URL
+              value: http://$(NODE_IP):4318
+            - name: NEXT_PUBLIC_SERVICE_NAME
+              value: fe-web-nextjs
             - name: HOSTNAME
               value: "0.0.0.0"
           readinessProbe:
