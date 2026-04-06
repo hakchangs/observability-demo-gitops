@@ -31,6 +31,8 @@ spec:
               value: http/protobuf
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
               value: http://192.168.122.175:4318
+            - name: OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED
+              value: "true"
             - name: SUBSCRIPTION_URL
               value: http://be-subscription:8080
             - name: PRODUCT_URL
