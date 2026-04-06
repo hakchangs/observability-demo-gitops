@@ -41,6 +41,8 @@ spec:
               value: http://be-subscription:8080
             - name: PRODUCT_URL
               value: http://be-product:8080
+            - name: LOGLEVEL
+              value: INFO
           readinessProbe:
             httpGet:
               path: /actuator/health
