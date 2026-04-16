@@ -34,7 +34,7 @@ spec:
             - name: SERVICES_SUBSCRIPTION_URL
               value: http://be-subscription:8080
             - name: SPRING_APPLICATION_JSON
-              value: '{"logging.level.net.kubeworks.bebff.filter.HttpLoggingFilter": "debug"
+              value: '{"logging.level.net.kubeworks.bebff.filter.HttpLoggingFilter": "debug"}'
           readinessProbe:
             httpGet:
               path: /actuator/health
