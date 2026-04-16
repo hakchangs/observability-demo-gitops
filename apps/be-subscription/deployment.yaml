@@ -15,7 +15,7 @@ spec:
       labels:
         app: be-subscription
       annotations:
-        instrumentation.opentelemetry.io/inject-java: "true"
+        instrumentation.opentelemetry.io/inject-java: "java-instrumentation"
     spec:
       imagePullSecrets:
         - name: harbor-credentials
