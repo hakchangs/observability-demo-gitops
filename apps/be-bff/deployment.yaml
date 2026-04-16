@@ -27,6 +27,12 @@ spec:
           env:
             - name: OTEL_SERVICE_NAME
               value: be-bff
+            - name: OTEL_INSTRUMENTATION_LOGBACK_APPENDER_EXPERIMENTAL_LOG_ATTRIBUTES
+              value: "true"
+            - name: OTEL_INSTRUMENTATION_LOGBACK_APPENDER_EXPERIMENTAL_CAPTURE_MDC_ATTRIBUTES
+              value: "*"
+            - name: OTEL_INSTRUMENTATION_LOGBACK_APPENDER_EXPERIMENTAL_CAPTURE_KEY_VALUE_PAIR_ATTRIBUTES
+              value: "true"
             - name: SERVICES_AUTH_URL
               value: http://be-auth:8080
             - name: SERVICES_PRODUCT_URL
