@@ -32,7 +32,7 @@ spec:
             - name: KAFKA_BOOTSTRAP_SERVERS
               value: kafka:9092
             - name: SPRING_APPLICATION_JSON
-              value: '{"spring":{"kafka":{"properties":{"security.protocol":"SASL_PLAINTEXT","sasl.mechanism":"PLAIN","sasl.jaas.config":"org.apache.kafka.common.security.plain.PlainLoginModule required username=\"user1\" password=\"plCxJVIBcH\";"}}}}'
+              value: '{"logging.level.net.kubeworks.beproduct.filter.OTELInstrumentationFilter": "debug", "spring":{"kafka":{"properties":{"security.protocol":"SASL_PLAINTEXT","sasl.mechanism":"PLAIN","sasl.jaas.config":"org.apache.kafka.common.security.plain.PlainLoginModule required username=\"user1\" password=\"plCxJVIBcH\";"}}}}'
           readinessProbe:
             httpGet:
               path: /actuator/health
