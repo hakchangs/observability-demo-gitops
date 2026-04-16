@@ -21,7 +21,7 @@ spec:
         - name: harbor-credentials
       containers:
         - name: be-bff
-          image: harbor.platform.local/app/be-bff:latest
+          image: harbor.platform.local/app/be-bff:367ecb4b
           ports:
             - containerPort: 8080
           env:
