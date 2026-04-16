@@ -21,7 +21,7 @@ spec:
         - name: harbor-credentials
       containers:
         - name: be-product
-          image: harbor.platform.local/app/be-product:2aba46d9
+          image: harbor.platform.local/app/be-product:23243992
           ports:
             - containerPort: 8080
           env:
