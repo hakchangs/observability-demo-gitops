@@ -29,6 +29,8 @@ spec:
                   fieldPath: status.hostIP
             - name: BFF_URL
               value: http://be-bff:8080
+            - name: OTEL_COLLECTOR_URL
+              value: http://$(NODE_IP):4318
             - name: OTEL_SERVICE_NAME
               value: fe-web
             - name: OTEL_LOGS_EXPORTER
