@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fe-web
+  namespace: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fe-web
+  template:
+    metadata:
+      labels:
+        app: fe-web
+      annotations:
+        instrumentation.opentelemetry.io/inject-nodejs: "java-instrumentation"
+    spec:
+      imagePullSecrets:
+        - name: harbor-credentials
+      containers:
+        - name: fe-web
+          image: harbor.platform.local/app/fe-web:72910d4d
+          ports:
+            - containerPort: 80
+          env:
+            - name: NODE_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+            - name: BFF_URL
+              value: http://be-bff:8080
+            - name: OTEL_SERVICE_NAME
+              value: fe-web
+            - name: OTEL_LOGS_EXPORTER
+              value: otlp
+            - name: OTEL_COLLECTOR_HTTP_URL
+              value: http://$(NODE_IP):4318
+            - name: NEXT_PUBLIC_SERVICE_NAME
+              value: fe-web
+            - name: HOSTNAME
+              value: "0.0.0.0"
