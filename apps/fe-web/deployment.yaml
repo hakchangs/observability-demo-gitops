@@ -19,7 +19,7 @@ spec:
         - name: harbor-credentials
       containers:
         - name: fe-web
-          image: harbor.platform.local/app/fe-web:cd41eca5
+          image: harbor.platform.local/app/fe-web:f6a6477a
           ports:
             - containerPort: 80
           env:
