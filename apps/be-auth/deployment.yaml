@@ -25,7 +25,7 @@ spec:
           ports:
             - containerPort: 8080
           env:
- 	    - name: OTEL_SERVICE_NAME
+            - name: OTEL_SERVICE_NAME
               value: be-auth
  #             valueFrom:
  #               fieldRef:
