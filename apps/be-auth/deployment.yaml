@@ -26,10 +26,10 @@ spec:
             - containerPort: 8080
           env:
             - name: OTEL_SERVICE_NAME
-              value: be-auth
- #             valueFrom:
- #               fieldRef:
- #                 fieldPath: metadata.labels['app.kubernetes.io/name']
+ #             value: be-auth
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['app.kubernetes.io/name']
           readinessProbe:
             httpGet:
               path: /actuator/health
