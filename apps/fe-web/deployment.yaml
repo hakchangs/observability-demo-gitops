@@ -7,11 +7,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fe-web
+      app.kubernetes.io/name: fe-web
   template:
     metadata:
       labels:
-        app: fe-web
+        app.kubernetes.io/namp: fe-web
       annotations:
         instrumentation.opentelemetry.io/inject-nodejs: "java-instrumentation"
     spec:
@@ -31,8 +31,6 @@ spec:
               value: http://be-bff:8080
             - name: OTEL_COLLECTOR_URL
               value: http://$(NODE_IP):4318
-            - name: OTEL_SERVICE_NAME
-              value: fe-web
             - name: OTEL_LOGS_EXPORTER
               value: otlp
             - name: OTEL_COLLECTOR_HTTP_URL
