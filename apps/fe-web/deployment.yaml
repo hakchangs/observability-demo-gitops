@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app.kubernetes.io/namp: fe-web
+        app.kubernetes.io/name: fe-web
       annotations:
         instrumentation.opentelemetry.io/inject-nodejs: "java-instrumentation"
     spec:
