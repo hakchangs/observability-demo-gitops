@@ -5,7 +5,7 @@ metadata:
   namespace: app
 spec:
   selector:
-    app: be-bff
+    app.kubernetes.io/name: be-bff
   ports:
     - port: 8080
       targetPort: 8080

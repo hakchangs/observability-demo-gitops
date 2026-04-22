@@ -24,12 +24,6 @@ spec:
           image: harbor.platform.local/app/be-auth:latest
           ports:
             - containerPort: 8080
-          env:
-            - name: OTEL_SERVICE_NAME
- #             value: be-auth
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.labels['app.kubernetes.io/name']
           readinessProbe:
             httpGet:
               path: /actuator/health

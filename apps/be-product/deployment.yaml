@@ -9,11 +9,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: be-product
+      app.kubernetes.io/name: be-product
   template:
     metadata:
       labels:
-        app: be-product
+        app.kubernetes.io/name: be-product
       annotations:
         instrumentation.opentelemetry.io/inject-java: "java-instrumentation"
     spec:
@@ -25,8 +25,6 @@ spec:
           ports:
             - containerPort: 8080
           env:
-            - name: OTEL_SERVICE_NAME
-              value: be-product
             - name: OTEL_INSTRUMENTATION_LOGBACK_APPENDER_EXPERIMENTAL_LOG_ATTRIBUTES
               value: "true"
             - name: OTEL_INSTRUMENTATION_LOGBACK_APPENDER_EXPERIMENTAL_CAPTURE_MDC_ATTRIBUTES

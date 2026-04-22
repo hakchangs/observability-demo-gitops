@@ -5,7 +5,7 @@ metadata:
   namespace: app
 spec:
   selector:
-    app: be-product
+    app.kubernetes.io/name: be-product
   ports:
     - port: 8080
       targetPort: 8080
