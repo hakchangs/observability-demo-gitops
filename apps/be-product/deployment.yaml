@@ -15,7 +15,7 @@ spec:
       labels:
         app.kubernetes.io/name: be-product
       annotations:
-        instrumentation.opentelemetry.io/inject-java: "java-instrumentation"
+        instrumentation.opentelemetry.io/inject-java: "pltform-observability/java-instrumentation"
     spec:
       imagePullSecrets:
         - name: harbor-credentials
