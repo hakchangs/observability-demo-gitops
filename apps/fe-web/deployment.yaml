@@ -13,7 +13,7 @@ spec:
       labels:
         app.kubernetes.io/name: fe-web
       annotations:
-        instrumentation.opentelemetry.io/inject-nodejs: "pltform-observability/java-instrumentation"
+        instrumentation.opentelemetry.io/inject-nodejs: "platform-observability/java-instrumentation"
     spec:
       imagePullSecrets:
         - name: harbor-credentials
