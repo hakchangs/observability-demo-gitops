@@ -2,7 +2,7 @@ apiVersion: opentelemetry.io/v1alpha1
 kind: Instrumentation
 metadata:
   name: java-instrumentation
-  namespace: app
+  namespace: platform-observability
 spec:
   exporter:
     endpoint: http://192.168.122.175:4317
