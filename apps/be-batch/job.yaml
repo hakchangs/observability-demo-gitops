@@ -21,7 +21,7 @@ spec:
         - name: be-batch
           image: harbor.platform.local/app/be-batch:f0faec14
           args:
-            - --spring.batch.job.name=sampleJob
+            - --spring.batch.job.name=simpleJob
           env:
             - name: OTEL_EXPORTER_OTLP_PROTOCOL
               value: http/protobuf

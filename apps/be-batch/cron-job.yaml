@@ -17,6 +17,8 @@ spec:
         metadata:
           labels:
             app.kubernetes.io/name: be-batch
+          annotations:
+            instrumentation.opentelemetry.io/inject-java: "platform-observability/java-instrumentation"
         spec:
           restartPolicy: Never
           imagePullSecrets:
