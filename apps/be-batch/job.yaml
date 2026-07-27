@@ -19,7 +19,7 @@ spec:
         - name: harbor-credentials
       containers:
         - name: be-batch
-          image: harbor.platform.local/app/be-batch:6bc8ccb3
+          image: harbor.platform.local/app/be-batch:fa02a523
           args:
             - --spring.batch.job.name=sampleJob
           env:
