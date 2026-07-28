@@ -16,6 +16,7 @@ spec:
         app.kubernetes.io/name: be-controller
       annotations:
         instrumentation.opentelemetry.io/inject-java: "platform-observability/java-instrumentation"
+    serviceAccount: be-controller-sa
     spec:
       imagePullSecrets:
         - name: harbor-credentials
