@@ -22,7 +22,7 @@ spec:
         - name: harbor-credentials
       containers:
         - name: be-controller
-          image: harbor.platform.local/app/be-controller:78d000cf
+          image: harbor.platform.local/app/be-controller:2500af57
           ports:
             - containerPort: 8080
           env:
