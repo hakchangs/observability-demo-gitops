@@ -37,6 +37,9 @@ spec:
                   value: "*"
                 - name: OTEL_INSTRUMENTATION_LOGBACK_APPENDER_EXPERIMENTAL_CAPTURE_KEY_VALUE_PAIR_ATTRIBUTES
                   value: "true"
+                # otel.java.experimental.span-attributes.copy-from-baggage.include
+                - name: OTEL_JAVA_EXPERIMENTAL_SPAN_ATTRIBUTES_COPY_FROM_BAGGAGE_INCLUDE
+                  value: guid
               # SPRING_BATCH_JOB_NAME 은 여기 안 넣음 — 실행 시 주입
               # TRACE_PARENT 도 여기 안 넣음 — on-demand 때 컨트롤러가 추가
               resources:
