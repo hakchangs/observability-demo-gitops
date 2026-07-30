@@ -25,7 +25,7 @@ spec:
             - name: harbor-credentials
           containers:
             - name: be-batch
-              image: harbor.platform.local/app/be-batch:71a5026c
+              image: harbor.platform.local/app/be-batch:fff7e703
               env:
                 - name: OTEL_EXPORTER_OTLP_PROTOCOL
                   value: http/protobuf
