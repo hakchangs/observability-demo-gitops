@@ -19,7 +19,7 @@ spec:
         - name: harbor-credentials
       containers:
         - name: fe-web-nextjs
-          image: harbor.platform.local/app/fe-web-nextjs:96eaff4a
+          image: harbor.platform.local/app/fe-web-nextjs:7a4b2c9e
           ports:
             - containerPort: 3000
           env:
